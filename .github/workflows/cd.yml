@@ -24,6 +24,9 @@ jobs:
       - name: Install goose
         run: "curl -fsSL https://raw.githubusercontent.com/pressly/goose/master/install.sh | sh"
 
+      - name: Run DB Migrations
+        run: "./scripts/migrateup.sh"
+
       - name: Build app
         run: scripts/buildprod.sh
 
